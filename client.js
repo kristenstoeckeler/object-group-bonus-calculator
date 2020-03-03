@@ -41,3 +41,48 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+
+function newEmployeeObject( employees ){
+  console.log( 'in NewEmployeeObject', employees );
+  let newEmployeeObject = {
+    name: employees.name,
+    bonusPercentage: 0,
+    totalCompensation: 0,
+    totalBonus: 0
+  }
+  if ( employees.reviewRating<= 2){
+    newEmployeeObject.bonusPercentage === 0;
+  } else if ( employees.reviewRating === 3) {
+    newEmployeeObject.bonusPercentage = .04;
+  } else if ( employees.reviewRating === 4) {
+    newEmployeeObject.bonusPercentage = .06
+  } else if ( employees.reviewRating === 5) {
+    newEmployeeObject.bonusPercentage = .1
+  }
+  if (employees.employeeNumber.length < 10000) {
+    newEmployeeObject.bonusPercentage += .05
+  } 
+  if (Number(employees.annualSalary) > 65000) {
+    newEmployeeObject.bonusPercentage -= .01
+  }
+  if (newEmployeeObject.bonusPercentage > .13){
+    newEmployeeObject.bonusPercentage = .13
+  }
+
+  newEmployeeObject.totalBonus = Number(employees.annualSalary)*newEmployeeObject.bonusPercentage;
+  newEmployeeObject.totalCompensation = newEmployeeObject.totalBonus + (Number(employees.annualSalary));
+ 
+
+  console.log( newEmployeeObject );
+}
+
+newEmployeeObject ( employees[0] );
+newEmployeeObject ( employees[1] );
+newEmployeeObject ( employees[2] );
+newEmployeeObject ( employees[3] );
+newEmployeeObject ( employees[4] );
+
+
+
+
