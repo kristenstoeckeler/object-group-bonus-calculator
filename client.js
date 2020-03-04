@@ -73,16 +73,16 @@ function newEmployeeObject( employees ){
   newEmployeeObject.totalBonus = Number(employees.annualSalary)*newEmployeeObject.bonusPercentage;
   newEmployeeObject.totalCompensation = newEmployeeObject.totalBonus + (Number(employees.annualSalary));
  
-
   console.log( newEmployeeObject );
 }
 
-newEmployeeObject ( employees[0] );
-newEmployeeObject ( employees[1] );
-newEmployeeObject ( employees[2] );
-newEmployeeObject ( employees[3] );
-newEmployeeObject ( employees[4] );
+for( let i in employees){
+  console.log( 'in for loop');
+  newEmployeeObject(employees[i]);
+}
 
-
-
-
+//newEmployeeObject ( employees[0] );
+//newEmployeeObject ( employees[1] );
+//newEmployeeObject ( employees[2] );
+//newEmployeeObject ( employees[3] );
+//newEmployeeObject ( employees[4] );
